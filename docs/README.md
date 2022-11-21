@@ -42,4 +42,4 @@
 
 ---
 
-![Presentation in shared documents folders]()
+[![Presentation in shared documents folders](http://../../code/thad/img/PE01/Prettier.jpg)](http://)

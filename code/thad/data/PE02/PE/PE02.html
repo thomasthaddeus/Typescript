@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="">
+
+<head>
+    <title>My Starter Web page</title>
+    <meta name="author" content="Thaddeus Thomas" />
+    <img src="./IMG/PE01/background.jpg" content="background" />
+    <!-- Local style sheet relative to workspace folder -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+        img {
+            width: 150%;
+        }
+    </style>
+    <!-- Local style sheet relative to this file -->
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <div class="container" style="
+    padding-top: 8px;
+    text-align: left;
+    font-size: 15px;
+    font-family: Source Sans Pro, Arial, sans-serif;
+">
+        <div>
+            <h2>Light Switch</h2>
+            <img id="light" src="./IMG/PE02/lightOff.png" style="width: 100px" />
+            <button type='button' id="OFF" onclick="toggleLightSwitch(id);">ON/OFF</button>
+            <script>
+                function toggleLightSwitch(id){
+                    var imgLight = document.getElementById("light")
+                    if (lightOff.match("OFF"))
+                    imgLight.src() = "./IMG/PE02/lightOff.png";
+                    else
+                    imgLight.src() = "./IMG/PE02/lightOn.png";
+                }
+            </script>
+        </div>
+</body>
+
+</html>
