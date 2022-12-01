@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+Monokai style - ported by Luigi Maselli - http://grigio.org
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #272822;
+  color: #ddd;
+}
+
+.hljs-tag,
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-strong,
+.hljs-name {
+  color: #f92672;
+}
+
+.hljs-code {
+  color: #66d9ef;
+}
+
+.hljs-class .hljs-title {
+  color: white;
+}
+
+.hljs-attribute,
+.hljs-symbol,
+.hljs-regexp,
+.hljs-link {
+  color: #bf79db;
+}
+
+.hljs-string,
+.hljs-bullet,
+.hljs-subst,
+.hljs-title,
+.hljs-section,
+.hljs-emphasis,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+  color: #a6e22e;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-doctag,
+.hljs-title,
+.hljs-section,
+.hljs-type,
+.hljs-selector-id {
+  font-weight: bold;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="is-312-web-design-and-programming">IS 312: Web Design and Programming</h1>
+<h2 id="pe07-programming-exercise">PE07: Programming Exercise</h2>
+<blockquote>
+<p>Revised: Fall 2022<br>
+By: Tj Scharlau</p>
+</blockquote>
+<h3 id="objective-creating-interfaces-and-classes-with-generic-types">Objective: Creating Interfaces and Classes with generic types</h3>
+<p>For this exercise you will be using the materials from this week’s course materials, in addition to online resources (self-located), to implement generic types via interfaces and classes.</p>
+<h2 id="task-1-declare-an-interface-using-generic-type">Task #1: Declare an interface using Generic Type</h2>
+<p>When creating an interface declaration, you can use a generic variable instead of type notations in TypeScript.</p>
+<ol>
+<li>Open your IDE and start a new file.</li>
+<li>Declare a simple interface called <code>Identity</code> with two properties:
+<ul>
+<li><code>value</code> and <code>message</code>, which use two <em>generic type</em> variables ( <code>T</code>, and <code>U</code> ) for the <em>property types</em>.</li>
+</ul>
+</li>
+<li>Paste your source code into the Lab Report document, under <code>Task 1-2</code>.</li>
+<li>Declare two variables, using the <code>Identity interface</code> as an object type. They should use the following parameters in the declaration:
+<ul>
+<li><strong>number</strong> &amp; <strong>string</strong> for <code>object one</code></li>
+<li><strong>string</strong> &amp; <strong>number</strong> for <code>object two</code></li>
+<li>The parameters should be listed in opposite order for each object.</li>
+</ul>
+</li>
+<li>Paste your source code into the lab report, under <code>Task 1-4</code>.</li>
+</ol>
+<h2 id="task-2-generic-interface-as-a-function-type-in-declarations">Task #2: Generic Interface as a function type in Declarations</h2>
+<p>For this task you will continue to build on the previous source code file, by completing the following steps:</p>
+<ol>
+<li>Declare a new interface called <code>ProcessIdentity</code> that includes the generic signature of a method, <code>(value: T, message: U): T</code>. Notice that this method doesn’t have a name.
+<ul>
+<li>Why do you think you would write it this way?</li>
+<li>What benefits does it have?</li>
+</ul>
+</li>
+<li>Paste your source code into the report under <code>Task 2–1</code>.</li>
+<li>Declare a function called <code>processIdentity</code> that has the same type signature as the <code>ProcessIdentity</code> interface. It should output the message to the console, and return the contents of value.</li>
+<li>Paste your source code into your lab report under <code>Task 2-3</code>.</li>
+<li>Declare a function type variable called <code>processor</code> with the <code>ProcessIdentity</code> <em>interface</em> as the variable type, passing in <code>number</code> for the <code>T</code> <em>type</em> and <strong>string</strong> for the <code>U</code> <em>type</em>.</li>
+<li>Assign the <code>ProcessIdentity</code> function to it.</li>
+<li>What does this allow you to do?
+<ul>
+<li>How does TypeScript handle it?</li>
+<li>Place your answers in your in your lab report under <code>Task 2-7</code></li>
+</ul>
+</li>
+<li>Set two variables: <code>returnNumber1</code> and <code>returnNumber2</code> that call the <code>processor</code> function with the following parameters:
+<ul>
+<li><code>returnNumber1</code> should pass 100 and 'Hello' to the <code>processor</code> function in that order.</li>
+<li><code>returnNumber2</code> should pass 'Hello' and 100 to the <code>processor</code> function in that order.</li>
+</ul>
+</li>
+<li>What results do these two items return when executed?
+<ul>
+<li>Why?</li>
+<li>Place your response under <code>Task 2–9</code> in your lab report.</li>
+</ul>
+</li>
+</ol>
+<h2 id="task-3-declare-a-generic-interface-as-a-class-type">Task #3: Declare a generic interface as a class type</h2>
+<p>We will now declare a <strong>generic interface</strong> as a class type. First start with an empty source code file.</p>
+<ol>
+<li>Declare an <em>interface</em> called <code>ProcessIdentity</code> that has <em>two properties</em>: <code>value</code> and <code>message</code>, and <em>two generic type variables</em> <code>T</code> and <code>U</code>, for the <strong>property types</strong>.</li>
+<li>Add a generic signature of a method called <code>process</code> that returns a value of type <code>T</code>.</li>
+<li>Paste your source code into your lab report under <code>Task 3-2</code>.</li>
+<li>Define a <strong>generic class</strong> called <code>processIdentity</code> that implements the <em>interface</em> from <code>Task 3–1</code>.</li>
+<li>Name the variable types in the <code>processIdentity class</code> <code>X</code> and <code>Y</code>.</li>
+<li>Why can you use <code>X</code> and <code>Y</code> here when the interface uses <code>T</code> and <code>U</code>?
+<ul>
+<li>Place your answer in Task 3 – 6 in your lab report.</li>
+</ul>
+</li>
+<li>Declare a new variable named <code>process</code> and assign a new <code>processIdentity</code> object to it, passing in <code>number</code> and <code>string</code> for the <code>X</code> and <code>Y</code> variable types, and a <code>number</code> and <code>string</code> as the argument values.</li>
+<li>Paste your source code into your lab report under <code>Task 3-7</code>.</li>
+<li>Execute the following commands:
+<ul>
+<li><code>processor.process();</code></li>
+<li><code>processor.value = ‘100’;</code></li>
+</ul>
+</li>
+<li>What did the above two commands produce when you executed them?
+<ul>
+<li>Why do you believe that you got those results?</li>
+<li>Place your response in <code>Task3-10</code> in your lab report.</li>
+</ul>
+</li>
+</ol>
+<h2 id="task-4-defining-a-generic-class">Task 4: Defining a Generic Class</h2>
+<p>For this task you will be defining a generic class. You will start from a blank file and do the following:</p>
+<ol>
+<li>
+<p>Declare <code>processIdentity</code> as a generic class, without implementing the <code>ProcessIdentity</code> interface. This will include the appropriate private values, a <code>constructor</code>, and the method <code>getIdentity()</code>, that all use generics in an appropriate manner. The variables in the object should be <code>value</code> and <code>message</code>. The method <code>getIdentity()</code> should <em>output</em> the <code>message</code> variable to the <strong>console</strong>, and return the <code>value</code> variables contents.</p>
+</li>
+<li>
+<p>Declare a new variable named <code>processor</code> and assign a <strong>new</strong> <code>processIdentity</code> <em>object</em> to it, passing in <code>number</code> and <code>string</code> for the <code>T</code> and <code>U</code> variable types, and a <code>number</code> and <code>string</code> as the argument values.</p>
+</li>
+<li>
+<p>Paste your source code into your lab report under <code>Task 4 – 1</code>.</p>
+</li>
+<li>
+<p>Run the following code:</p>
+<pre class="hljs"><code><div>processor.getIdentity();
+</div></code></pre>
+</li>
+<li>
+<p>What output does that return? Place your response under <code>Task 4 - 5</code></p>
+</li>
+</ol>
+<h2 id="submission">Submission</h2>
+<p>To submit this assignment, you should submit your completed lab report to Brightspace.</p>
+
+</body>
+</html>

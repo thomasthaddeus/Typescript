@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>README.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
+    <style>
+      /* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+      /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+      body {
+        font-family: var(
+          --vscode-markdown-font-family,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe WPC",
+          "Segoe UI",
+          "Ubuntu",
+          "Droid Sans",
+          sans-serif
+        );
+        font-size: var(--vscode-markdown-font-size, 14px);
+        padding: 0 26px;
+        line-height: var(--vscode-markdown-line-height, 22px);
+        word-wrap: break-word;
+      }
+
+      #code-csp-warning {
+        position: fixed;
+        top: 0;
+        right: 0;
+        color: white;
+        margin: 16px;
+        text-align: center;
+        font-size: 12px;
+        font-family: sans-serif;
+        background-color: #444444;
+        cursor: pointer;
+        padding: 6px;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+      }
+
+      #code-csp-warning:hover {
+        text-decoration: none;
+        background-color: #007acc;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+      }
+
+      body.scrollBeyondLastLine {
+        margin-bottom: calc(100vh - 22px);
+      }
+
+      body.showEditorSelection .code-line {
+        position: relative;
+      }
+
+      body.showEditorSelection .code-active-line:before,
+      body.showEditorSelection .code-line:hover:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -12px;
+        height: 100%;
+      }
+
+      body.showEditorSelection li.code-active-line:before,
+      body.showEditorSelection li.code-line:hover:before {
+        left: -30px;
+      }
+
+      .vscode-light.showEditorSelection .code-active-line:before {
+        border-left: 3px solid rgba(0, 0, 0, 0.15);
+      }
+
+      .vscode-light.showEditorSelection .code-line:hover:before {
+        border-left: 3px solid rgba(0, 0, 0, 0.4);
+      }
+
+      .vscode-light.showEditorSelection .code-line .code-line:hover:before {
+        border-left: none;
+      }
+
+      .vscode-dark.showEditorSelection .code-active-line:before {
+        border-left: 3px solid rgba(255, 255, 255, 0.4);
+      }
+
+      .vscode-dark.showEditorSelection .code-line:hover:before {
+        border-left: 3px solid rgba(255, 255, 255, 0.6);
+      }
+
+      .vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+        border-left: none;
+      }
+
+      .vscode-high-contrast.showEditorSelection .code-active-line:before {
+        border-left: 3px solid rgba(255, 160, 0, 0.7);
+      }
+
+      .vscode-high-contrast.showEditorSelection .code-line:hover:before {
+        border-left: 3px solid rgba(255, 160, 0, 1);
+      }
+
+      .vscode-high-contrast.showEditorSelection
+        .code-line
+        .code-line:hover:before {
+        border-left: none;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      a:focus,
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: 1px solid -webkit-focus-ring-color;
+        outline-offset: -1px;
+      }
+
+      hr {
+        border: 0;
+        height: 2px;
+        border-bottom: 2px solid;
+      }
+
+      h1 {
+        padding-bottom: 0.3em;
+        line-height: 1.2;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-weight: normal;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      table > thead > tr > th {
+        text-align: left;
+        border-bottom: 1px solid;
+      }
+
+      table > thead > tr > th,
+      table > thead > tr > td,
+      table > tbody > tr > th,
+      table > tbody > tr > td {
+        padding: 5px 10px;
+      }
+
+      table > tbody > tr + tr > td {
+        border-top: 1px solid;
+      }
+
+      blockquote {
+        margin: 0 7px 0 5px;
+        padding: 0 16px 0 10px;
+        border-left-width: 5px;
+        border-left-style: solid;
+      }
+
+      code {
+        font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New",
+          monospace, "Droid Sans Fallback";
+        font-size: 1em;
+        line-height: 1.357em;
+      }
+
+      body.wordWrap pre {
+        white-space: pre-wrap;
+      }
+
+      pre:not(.hljs),
+      pre.hljs code > div {
+        padding: 16px;
+        border-radius: 3px;
+        overflow: auto;
+      }
+
+      pre code {
+        color: var(--vscode-editor-foreground);
+        tab-size: 4;
+      }
+
+      /** Theming */
+
+      .vscode-light pre {
+        background-color: rgba(220, 220, 220, 0.4);
+      }
+
+      .vscode-dark pre {
+        background-color: rgba(10, 10, 10, 0.4);
+      }
+
+      .vscode-high-contrast pre {
+        background-color: rgb(0, 0, 0);
+      }
+
+      .vscode-high-contrast h1 {
+        border-color: rgb(0, 0, 0);
+      }
+
+      .vscode-light table > thead > tr > th {
+        border-color: rgba(0, 0, 0, 0.69);
+      }
+
+      .vscode-dark table > thead > tr > th {
+        border-color: rgba(255, 255, 255, 0.69);
+      }
+
+      .vscode-light h1,
+      .vscode-light hr,
+      .vscode-light table > tbody > tr + tr > td {
+        border-color: rgba(0, 0, 0, 0.18);
+      }
+
+      .vscode-dark h1,
+      .vscode-dark hr,
+      .vscode-dark table > tbody > tr + tr > td {
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+    </style>
+
+    <style>
+      /*
+  xt256.css
+
+  Contact: initbar [at] protonmail [dot] ch
+         : github.com/initbar
+*/
+
+      .hljs {
+        display: block;
+        overflow-x: auto;
+        color: #eaeaea;
+        background: #000;
+        padding: 0.5em;
+      }
+
+      .hljs-subst {
+        color: #eaeaea;
+      }
+
+      .hljs-emphasis {
+        font-style: italic;
+      }
+
+      .hljs-strong {
+        font-weight: bold;
+      }
+
+      .hljs-builtin-name,
+      .hljs-type {
+        color: #eaeaea;
+      }
+
+      .hljs-params {
+        color: #da0000;
+      }
+
+      .hljs-literal,
+      .hljs-number,
+      .hljs-name {
+        color: #ff0000;
+        font-weight: bolder;
+      }
+
+      .hljs-comment {
+        color: #969896;
+      }
+
+      .hljs-selector-id,
+      .hljs-quote {
+        color: #00ffff;
+      }
+
+      .hljs-template-variable,
+      .hljs-variable,
+      .hljs-title {
+        color: #00ffff;
+        font-weight: bold;
+      }
+
+      .hljs-selector-class,
+      .hljs-keyword,
+      .hljs-symbol {
+        color: #fff000;
+      }
+
+      .hljs-string,
+      .hljs-bullet {
+        color: #00ff00;
+      }
+
+      .hljs-tag,
+      .hljs-section {
+        color: #000fff;
+      }
+
+      .hljs-selector-tag {
+        color: #000fff;
+        font-weight: bold;
+      }
+
+      .hljs-attribute,
+      .hljs-built_in,
+      .hljs-regexp,
+      .hljs-link {
+        color: #ff00ff;
+      }
+
+      .hljs-meta {
+        color: #fff;
+        font-weight: bolder;
+      }
+    </style>
+
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+  </head>
+  <body>
+    <script>
+      mermaid.initialize({
+        startOnLoad: true,
+        theme:
+          document.body.classList.contains("vscode-dark") ||
+          document.body.classList.contains("vscode-high-contrast")
+            ? "dark"
+            : "default",
+      });
+    </script>
+    <h1 id="is-312-web-design-and-programming">
+      IS 312: Web Design and Programming
+    </h1>
+    <h2 id="pe06-programming-exercise">PE06: Programming Exercise</h2>
+    <blockquote>
+      <p>
+        Revised: Fall 2022<br />
+        By: Tj Scharlau
+      </p>
+    </blockquote>
+    <h2 id="objective-declare-instantiate-and-extend-a-typescript-interface">
+      Objective: Declare, Instantiate, and Extend a TypeScript Interface
+    </h2>
+    <p>
+      For this exercise you will be declaring, instantiating, and extending an
+      interface in TypeScript. There are three tasks for this exercise.
+    </p>
+    <h2 id="task-1-declaring-an-interface">Task #1: Declaring an interface</h2>
+    <ol>
+      <li>
+        Open your IDE and start a new project.
+        <ul>
+          <li>
+            You will first declare an interface named <code>Pizza</code> that
+            includes two properties: <code>type</code> as a
+            <code>string</code> and <code>slices</code> as a
+            <code>number</code>.
+          </li>
+        </ul>
+      </li>
+      <li>
+        You will next implement that interface. Start by using the Pizza
+        interface as a type in a variable declaration. Declare a new variable
+        called <code>myPizza</code> as <em>type</em> <code>Pizza</code>., and
+        then assign values to the required properties. In VSCode you should see
+        intellisense suggest the correct name and types. You can check your work
+        by outputting one of the values to the console.
+      </li>
+      <li>
+        Take a screenshot of your code and include both the screenshot and your
+        source code in your Lab Report under <strong>Task 1</strong>.
+      </li>
+    </ol>
+    <h2
+      id="task-2-instancing-an-interface-and-using-a-function-to-check-a-value"
+    >
+      Task #2: Instancing an Interface and using a function to check a value
+    </h2>
+    <p>
+      For this task you will be creating a function that will compare the value
+      of the slices in an instance of the Pizza interface and returning a
+      message if the number is too high.
+    </p>
+    <ol>
+      <li>
+        First, create a function called <code>checkSlices</code>. This uses the
+        Pizza interface as a parameter type for the function. You can call this
+        parameter whatever you want, though something that keeps the pizza theme
+        wouldn’t be unusual.
+      </li>
+      <li>
+        This function should check the number of slices in the Pizza object and
+        returns a message based on the result.
+      </li>
+      <li>
+        There are typically 8 slices in a pizza, depending on how it’s cut.
+        <ul>
+          <li>
+            Your function should consider anything above 8 as too many slices
+            and output that it’s too many.
+          </li>
+          <li>
+            Otherwise, it should return a message based on how many slices are
+            left (1, 7/8, ¾, 5/8, ½, 3/8, ¼ or 1/8 ).
+          </li>
+          <li>
+            This could simply be a &quot;There is <strong>_</strong> remaining
+            of the pizza.&quot;
+          </li>
+        </ul>
+      </li>
+      <li>You will run the code using an object passed into the function.</li>
+      <li>
+        This uses the same syntax as was used in <code>PE04</code> for the
+        slices, using {} and the name : <code>value pairs</code>.
+      </li>
+      <li>
+        Once you run your code, take a screenshot of both the code and the
+        results, and put them in your lab report under <code>Task 2-1</code>
+      </li>
+    </ol>
+    <h3 id="task-2-1">Task 2-1</h3>
+    <ol>
+      <li>What happens if you add another property to the Pizza interface?</li>
+      <li>
+        Let's add a new property called <code>crust</code> and assign it the
+        <code>string</code> type.
+      </li>
+      <li>Run your code, and report on the results.</li>
+      <li>Include a screen shot of the results, and caption it</li>
+    </ol>
+    <h3 id="task-2-2">Task 2-2</h3>
+    <ol>
+      <li>Review the errors that appear in your code.</li>
+      <li>
+        To resolve them, you should add the <code>crust</code> property to the
+        implementation details of the variable declaration and add it as a
+        parameter passed to the function.
+      </li>
+      <li>
+        For now, make the crust property optional by adding a question mark to
+        the property name.
+      </li>
+      <li>
+        All the errors should be resolved because the
+        <code>crust</code> property is no longer required by the interface.
+      </li>
+    </ol>
+    <h2 id="task-3-extending-interfaces">Task #3: Extending Interfaces</h2>
+    <ol>
+      <li>
+        For this task you will declare a new interface called Toppings that
+        extends the Pizza interface.
+      </li>
+      <li>
+        Your extension should include the following parameters:
+        <ul>
+          <li>
+            sauce with is a literal type 'tomato' | 'alfredo' | 'bbq sauce'
+          </li>
+          <li>pineapple of type Boolean (optional)</li>
+          <li>parmesan of type Boolean (optional)</li>
+          <li>crust of type Boolean</li>
+        </ul>
+      </li>
+      <li>
+        Note any errors or problems that TypeScripts mentions in the code, and
+        correct them as appropriate.
+        <ul>
+          <li>Do not rename any of the properties.</li>
+          <li>
+            Take a screenshot of your source code and include it in your report
+            under <em>Task 3</em>, with the caption <code>Task 3-1</code>
+          </li>
+        </ul>
+      </li>
+    </ol>
+    <h3 id="task-3-1">Task 3-1</h3>
+    <ol>
+      <li>
+        Next change your <code>myPizza</code> variable to type
+        <code>Toppings</code>
+        <ul>
+          <li>What happens when you do this?</li>
+          <li>Why?</li>
+          <li>
+            Add your response and reasoning to your lab report under
+            <code>Task 3</code>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Now correct the error by modifying your <code>myPizza</code> variable by
+        adding any missing required properties.
+        <ul>
+          <li>
+            You can also add any of the optional parameters that you want.
+          </li>
+        </ul>
+      </li>
+      <li>
+        Now update your <code>checkSlices</code> function to use the
+        <code>Toppings</code> interface.
+        <ul>
+          <li>What happens when you update the code?</li>
+          <li>What happens when you execute the code?</li>
+          <li>
+            Are there any errors?
+            <ul>
+              <li>If so, fix them, and try running the code again.</li>
+              <li>If not, why?</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Take a screenshot of the output of your code and include your final
+        source code in the word document.
+      </li>
+    </ol>
+    <h2 id="task-4-learning--challenges">Task 4: Learning &amp; Challenges</h2>
+    <ol>
+      <li>
+        In this task, you should simply discuss what you learned from the
+        exercise.
+      </li>
+      <li>What was surprising, confusing, or problematic.</li>
+      <li>Add this write up to your Lab Report under <em>Task 4</em>.</li>
+      <li>
+        You can include any screenshots if needed to clarify or demonstrate your
+        point or issue.
+      </li>
+      <li>
+        Please caption any images in this section with
+        <code>Task 4-#</code> (incrementing each # for each image).
+      </li>
+      <li>Be sure to reference any screenshots by caption in your text.</li>
+    </ol>
+    <h3 id="submission">Submission</h3>
+    <p>
+      To submit this assignment, you should submit your complete TypeScript
+      source code file, and your Lab Report.
+    </p>
+  </body>
+</html>

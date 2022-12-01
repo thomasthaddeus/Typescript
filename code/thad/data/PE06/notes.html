@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>notes.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+
+/*
+  xt256.css
+
+  Contact: initbar [at] protonmail [dot] ch
+         : github.com/initbar
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  color: #eaeaea;
+  background: #000;
+  padding: 0.5em;
+}
+
+.hljs-subst {
+  color: #eaeaea;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-builtin-name,
+.hljs-type {
+  color: #eaeaea;
+}
+
+.hljs-params {
+  color: #da0000;
+}
+
+.hljs-literal,
+.hljs-number,
+.hljs-name {
+  color: #ff0000;
+  font-weight: bolder;
+}
+
+.hljs-comment {
+  color: #969896;
+}
+
+.hljs-selector-id,
+.hljs-quote {
+  color: #00ffff;
+}
+
+.hljs-template-variable,
+.hljs-variable,
+.hljs-title {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+.hljs-selector-class,
+.hljs-keyword,
+.hljs-symbol {
+  color: #fff000;
+}
+
+.hljs-string,
+.hljs-bullet {
+  color: #00ff00;
+}
+
+.hljs-tag,
+.hljs-section {
+  color: #000fff;
+}
+
+.hljs-selector-tag {
+  color: #000fff;
+  font-weight: bold;
+}
+
+.hljs-attribute,
+.hljs-built_in,
+.hljs-regexp,
+.hljs-link {
+  color: #ff00ff;
+}
+
+.hljs-meta {
+  color: #fff;
+  font-weight: bolder;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="chapter6-notes">Chapter6 Notes</h1>
+<h2 id="methods">Methods</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> rabbit = {};
+rabbit.speak = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">line</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`The rabbit says '<span class="hljs-subst">${line}</span>’`</span>);
+};
+rabbit.speak(<span class="hljs-string">"I'm alive."</span>);
+</div></code></pre>
+<h2 id="instance-object">instance-object</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> Dog
+{
+    age: <span class="hljs-built_in">number</span>
+    breed: <span class="hljs-built_in">string</span>
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params">age: <span class="hljs-built_in">number</span>, breed: <span class="hljs-built_in">string</span></span>)
+    {
+        <span class="hljs-keyword">this</span>.age = age
+        <span class="hljs-keyword">this</span>.breed = <span class="hljs-built_in">string</span>
+    }
+    getRelativeAge(): <span class="hljs-built_in">number</span>
+    {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.age * <span class="hljs-number">7</span>
+    }
+}
+<span class="hljs-keyword">let</span> Spot = <span class="hljs-keyword">new</span> Dog(<span class="hljs-number">2</span>, <span class="hljs-string">'Labrador'</span>)
+</div></code></pre>
+<ol>
+<li>Equivalent function in <strong>ES5</strong></li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Dog</span>(<span class="hljs-params">age, breed</span>)
+</span>{
+    <span class="hljs-keyword">this</span>.age = age
+    <span class="hljs-keyword">this</span>.breed = breed
+}
+Dog.prototype.getRelativeAge = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.age * <span class="hljs-number">7</span>
+}
+<span class="hljs-keyword">var</span> Spot = <span class="hljs-keyword">new</span> Dog(<span class="hljs-number">2</span>, <span class="hljs-string">'Labrador'</span>)
+</div></code></pre>
+<h2 id="inheritance">Inheritance</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> Animal
+{
+    age: <span class="hljs-built_in">number</span>
+    breed: <span class="hljs-built_in">string</span>
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params">age: <span class="hljs-built_in">number</span>, breed: <span class="hljs-built_in">string</span></span>)
+    {
+        <span class="hljs-keyword">this</span>.age = age
+        <span class="hljs-keyword">this</span>.breed = breed
+    }
+    makeSound_(sound: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">void</span>
+    {
+        <span class="hljs-built_in">console</span>.log(sound)
+        <span class="hljs-built_in">console</span>.log(sound)
+        <span class="hljs-built_in">console</span>.log(sound)
+    }
+}
+</div></code></pre>
+<h3 id="using-super">Using <code>super</code></h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> Dog <span class="hljs-keyword">extends</span> Animal
+{
+    playsFetch: <span class="hljs-built_in">boolean</span>
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params">age: <span class="hljs-built_in">number</span>, breed: <span class="hljs-built_in">string</span>, playsFetch: <span class="hljs-built_in">boolean</span></span>)
+    {
+         <span class="hljs-keyword">super</span>(age, breed) <span class="hljs-comment">// call parent constructor</span>
+         <span class="hljs-keyword">this</span>.playsFetch = playsFetch
+    }
+    makeSound(): <span class="hljs-built_in">void</span>
+    {
+        <span class="hljs-keyword">super</span>.makeSound_(<span class="hljs-string">'woof woof'</span>)
+    }
+    getAgeInHumanYears(): <span class="hljs-built_in">number</span>
+    {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.age * <span class="hljs-number">7</span>    <span class="hljs-comment">// super.age will throw error</span>
+    }
+}
+<span class="hljs-keyword">class</span> Cat <span class="hljs-keyword">extends</span> Animal
+{
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params">age: <span class="hljs-built_in">number</span>, breed: <span class="hljs-built_in">string</span></span>)
+    {
+        <span class="hljs-keyword">super</span>(age, breed)
+    }
+    makeSound(): <span class="hljs-built_in">void</span>
+    {
+        <span class="hljs-keyword">super</span>.makeSound_(<span class="hljs-string">'meow meow'</span>)
+    }
+}
+</div></code></pre>
+<h2 id="access-control">Access Control</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> Dog
+{
+    <span class="hljs-keyword">public</span> name: <span class="hljs-built_in">string</span> <span class="hljs-comment">// leaving out 'public' would work too</span>
+}
+<span class="hljs-keyword">class</span> PetStore
+{
+    dogs: <span class="hljs-built_in">Array</span>&lt;Dog&gt;
+    printAllDogNames(): <span class="hljs-built_in">void</span>
+    {
+        <span class="hljs-keyword">this</span>.dogs.forEach(<span class="hljs-function"><span class="hljs-params">dog</span> =&gt;</span> {
+            <span class="hljs-built_in">console</span>.log(dog.name)
+        })
+    }
+}
+</div></code></pre>
+<ol>
+<li>Getters &amp; Setters</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> Dog
+{
+    <span class="hljs-keyword">private</span> _name: <span class="hljs-built_in">string</span> <span class="hljs-comment">// beginning underscore is convention</span>
+    <span class="hljs-keyword">get</span> name(): <span class="hljs-built_in">string</span>
+    {
+       <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._name
+    }
+    <span class="hljs-keyword">set</span> name(name: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">void</span>
+    {
+        <span class="hljs-keyword">if</span>(!name || name.length &gt; <span class="hljs-number">20</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Name invalid'</span>)
+        }
+        <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">this</span>._name = name
+        }
+    }
+}
+<span class="hljs-keyword">class</span> PetStore
+{
+    <span class="hljs-keyword">private</span> _dogs: <span class="hljs-built_in">Array</span>&lt;Dog&gt; <span class="hljs-comment">// we changed this to private too</span>
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"></span>)
+    {
+        <span class="hljs-keyword">this</span>._dogs = [<span class="hljs-keyword">new</span> Dog()]
+        <span class="hljs-keyword">this</span>._dogs[<span class="hljs-number">0</span>].name = <span class="hljs-string">'Fido'</span> <span class="hljs-comment">// will call 'set'</span>
+    }
+    printAllDogNames(): <span class="hljs-built_in">void</span>
+    {
+        <span class="hljs-keyword">this</span>._dogs.forEach(<span class="hljs-function"><span class="hljs-params">dog</span> =&gt;</span> {
+            <span class="hljs-built_in">console</span>.log(dog.name) <span class="hljs-comment">// will call 'get'</span>
+        })
+    }
+}
+</div></code></pre>
+<ol>
+<li>protected</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> Animal
+{
+    <span class="hljs-keyword">protected</span> makeSound_(sound: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">void</span>
+    {
+        <span class="hljs-built_in">console</span>.log(sound)
+        <span class="hljs-built_in">console</span>.log(sound)
+        <span class="hljs-built_in">console</span>.log(sound)
+    }
+}
+<span class="hljs-keyword">class</span> Dog <span class="hljs-keyword">extends</span> Animal
+{
+    makeSound(): <span class="hljs-built_in">void</span>
+    {
+        <span class="hljs-keyword">super</span>.makeSound_(<span class="hljs-string">'woof woof'</span>)
+    }
+}
+<span class="hljs-keyword">class</span> PetStore
+{
+    makeSomeSounds(): <span class="hljs-built_in">void</span>
+    {
+        <span class="hljs-keyword">let</span> dog = <span class="hljs-keyword">new</span> Dog()
+        dog.makeSound() <span class="hljs-comment">// =&gt; 'woof woof' 'woof woof' 'woof woof'</span>
+        <span class="hljs-keyword">let</span> animal = <span class="hljs-keyword">new</span> Animal()
+        animal.makeSound_() <span class="hljs-comment">// =&gt; NOT ALLOWED</span>
+    }
+}
+</div></code></pre>
+<h2 id="other-modifiers">Other Modifiers</h2>
+<ol>
+<li>static</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> Dog
+{
+    <span class="hljs-keyword">static</span> species = <span class="hljs-string">'Canis Familaris'</span>
+    age = <span class="hljs-number">10</span>
+}
+<span class="hljs-keyword">class</span> PetStore
+{
+    printSpecies(): <span class="hljs-built_in">void</span>
+    {
+        <span class="hljs-built_in">console</span>.log(Dog.species) <span class="hljs-comment">// =&gt; 'Canis Familaris'</span>
+        <span class="hljs-built_in">console</span>.log(Dog.age) <span class="hljs-comment">// =&gt; undefined</span>
+    }
+}
+</div></code></pre>
+<ol>
+<li>readonly</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> Dog
+{
+    <span class="hljs-keyword">static</span> readonly species = <span class="hljs-string">'Canis Familaris'</span>
+}
+<span class="hljs-keyword">class</span> PetStore
+{
+    printSpecies(): <span class="hljs-built_in">void</span>
+    {
+        <span class="hljs-built_in">console</span>.log(Dog.species) <span class="hljs-comment">// =&gt; 'Canis Familaris'</span>
+        Dog.species = <span class="hljs-string">'Terdus Maximus'</span> <span class="hljs-comment">// =&gt; NOT ALLOWED</span>
+    }
+}
+</div></code></pre>
+<h2 id="interfaces">Interfaces</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">interface</span> iDog
+{
+    getPedigree: <span class="hljs-built_in">Function</span>
+}
+<span class="hljs-keyword">class</span> Dog <span class="hljs-keyword">implements</span> iDog
+{
+    getPedigree(): <span class="hljs-built_in">Promise</span>&lt;Pedigree&gt;
+    {
+        <span class="hljs-keyword">return</span> someThirdPartyIoCall(<span class="hljs-string">'...'</span>)
+    }
+}
+<span class="hljs-keyword">class</span> MockDog <span class="hljs-keyword">implements</span> iDog
+{
+    getPedigree(): <span class="hljs-built_in">Promise</span>&lt;Pedigree&gt;
+    {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> DummyPedigreeObject()
+    }
+}
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">methodToBeTested</span>(<span class="hljs-params">dog: iDog</span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">void</span>&gt;
+</span>{
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">let</span> pedigree = <span class="hljs-keyword">await</span> dog.getPedigree()
+        <span class="hljs-comment">// do assertions here</span>
+    }
+    <span class="hljs-keyword">catch</span>(err) {
+        <span class="hljs-built_in">console</span>.log(err)
+    }
+}
+
+<span class="hljs-comment">// Real World</span>
+methodToBeTested(<span class="hljs-keyword">new</span> Dog())
+
+<span class="hljs-comment">// During Testing</span>
+methodToBeTested(<span class="hljs-keyword">new</span> MockDog())
+</div></code></pre>
+<h2 id="abstract">Abstract</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> Animal
+{
+    <span class="hljs-keyword">protected</span> age_: <span class="hljs-built_in">number</span>
+    <span class="hljs-keyword">abstract</span> getRelativeAge(): <span class="hljs-built_in">number</span>;
+}
+<span class="hljs-keyword">class</span> Dog <span class="hljs-keyword">extends</span> Animal
+{
+    getRelativeAge(): <span class="hljs-built_in">number</span>
+    {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.age_ * <span class="hljs-number">7</span>
+    }
+}
+<span class="hljs-keyword">class</span> Cat <span class="hljs-keyword">extends</span> Animal
+{
+    getRelativeAge(): <span class="hljs-built_in">number</span>
+    {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.age_ * <span class="hljs-number">6</span>
+    }
+}
+</div></code></pre>
+
+</body>
+</html>
