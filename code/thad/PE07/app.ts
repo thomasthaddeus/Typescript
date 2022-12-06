@@ -1,4 +1,4 @@
-interface Identity {
-    value<T>:
-    message<U>:
+interface Identity<T,U> {
+    private value<T>: T;
+    private message<U>: U;
 }

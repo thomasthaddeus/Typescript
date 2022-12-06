@@ -1,29 +1,24 @@
-interface Identity<T, U> 
-{
-    value: T;
-    message: U;
+interface Identity<T, U> {
+  value: T;
+  message: U;
 }
 
-var object1: Identity<number, string> =
-{
-    value: 5,
-    message: "Hello World"
-}
-var object2: Identity<string, number> = 
-{
-    value: "Hello World",
-    message: 5
+var object1: Identity<number, string> = {
+  value: 5,
+  message: "Hello World",
+};
+var object2: Identity<string, number> = {
+  value: "Hello World",
+  message: 5,
+};
+
+interface ProcessIdentity<T, U> {
+  (value: T, message: U): T;
 }
 
-interface ProcessIdentity<T, U>
-{
-    (value: T, message: U): T;
-}
-
-function processIdentity<T, U>(value: T, message: U): T 
-{
-    console.log(message);
-    return value;
+function processIdentity<T, U>(value: T, message: U): T {
+  console.log(message);
+  return value;
 }
 
 var processor1: ProcessIdentity<number, string> = processIdentity;

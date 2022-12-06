@@ -26,7 +26,7 @@ For this task you will be creating a function that will compare the value of the
 You will run the code using an object passed into the function. This uses the same syntax as was used in PE04 for the slices, using {} and the name : value pairs.
 Once you run your code, take a screenshot of both the code and the results, and put them in your lab report under
 
-### Task 2-1.
+### Task 2-1
 
 1. What happens if you add another property to the Pizza interface? Let's add a new property called crust and assign it the string type. Run your code, and report on the results. Include a screen shot of the results, and caption it
 

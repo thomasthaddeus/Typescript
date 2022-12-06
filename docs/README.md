@@ -12,9 +12,7 @@
 
 ## Christian
 
-- [ ] PE02
 - [ ] PE04
-- [ ] PE06
 - [ ] PE08
 - [ ] PE09
 - [ ] PE10
@@ -28,4 +26,4 @@
 
 ---
 
-[![Presentation in shared documents folders](http://../../code/thad/img/PE01/Prettier.jpg)](http://)
+![[Presentation in shared documents folders](https://cityuseattle-my.sharepoint.com/:p:/g/personal/thomasthaddeus_cityuniversity_edu/EZRoDj9bOTNJujwJvE7A1jMBb5PrXjHfQBhzs3jerOAH6A)](https://img.shields.io/badge/github/last-commit/:user/:repo/:branch)
