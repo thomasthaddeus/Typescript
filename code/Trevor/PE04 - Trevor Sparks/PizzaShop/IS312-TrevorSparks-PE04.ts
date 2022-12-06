@@ -7,7 +7,7 @@ let pizzaSlices =[
         price: 40
 
     },{
-        name: "Peperoni",
+        name: "Pepperoni",
         type: "Meat",
         price: 35
 

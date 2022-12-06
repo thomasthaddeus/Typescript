@@ -7,7 +7,7 @@ let pizzaSlices =[
         price: 40
 
     },{
-        name: "Peperoni",
+        name: "Pepperoni",
         type: "Meat",
         price: 35
 
@@ -43,11 +43,11 @@ const transactions = [
     {slices: ["Chicken Alfredo", "Mac & Cheese", "BBQ Chicken"], cost: 110}
 ]
 
-var totalSales:number = 0
+var totalSales: number = 0 ;
 
-totalSales = transactions.reduce((totalSum, currentSum) => totalSum + currentSum.cost, 0)
+totalSales = transactions.reduce((totalSum, currentSum) => totalSum + currentSum.cost, 0);
 
-console.log(`You’ve made $${totalSales} today!`)
+console.log(`You’ve made $${totalSales} today!`);
 
 
 for(let i = 0; i< transactions.length; i++){

@@ -33,4 +33,3 @@ function checkSlices(pizza: Toppings): string{
 };
 
 console.log(checkSlices(myPizza));
-
