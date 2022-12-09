@@ -1,5 +1,22 @@
 # Assignments
 
+- [Assignments](#assignments)
+  - [PE01 \& PE02](#pe01--pe02)
+  - [PE03](#pe03)
+    - [Task # 1](#task--1)
+    - [Task # 2](#task--2)
+    - [Task # 3](#task--3)
+  - [PE04](#pe04)
+    - [PizzaShop](#pizzashop)
+  - [PE05](#pe05)
+  - [PE06](#pe06)
+  - [PE07](#pe07)
+  - [PE08](#pe08)
+    - [Pirate Treasure The locked box](#pirate-treasure-the-locked-box)
+  - [PE09](#pe09)
+    - [promise\_All](#promise_all)
+  - [PE10](#pe10)
+
 ## PE01 & PE02
 
 ```html
@@ -160,7 +177,7 @@ var total2 = transactions.reduce(function (a, b) {
 console.log(`Total is: $${total2}`);
 ```
 
-PizzaShop1.ts
+### PizzaShop
 
 ```ts
 class Slice {
@@ -326,7 +343,7 @@ function myFunction() {
 myFunction();
 ```
 
-1. Pirate Treasure The locked box
+### Pirate Treasure The locked box
 
 ```js
 const box = {
@@ -403,7 +420,7 @@ locateScalpel(bigOak).then(console.log);
 woAsync(bigOak).then(console.log);
 ```
 
-1. promise_All
+### promise_All
 
 ```ts
 function Promise_all(p: any): Promise<any> {
