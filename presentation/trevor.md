@@ -340,26 +340,6 @@ function whenTheButtonIsClicked(){
 </html>
 ```
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PE05 - Trevor Sparks</title>
-    <script type="text/javascript" src="PE05.js"></script>
-</head>
-<body>
-    <h1>Click the button to perform calculations and get user input</h1>
-    <button onclick="whenTheButtonIsClicked();">Click me!</button>
-    <p id="userInput">The user input:</p>
-    <p id="task2FunctionAnswer">Task 2 function answer:</p>
-    <p id="calcedFib">The Fibonacci value and the users input index: </p>
-</body>
-</html>
-```
-
 ## PE06
 
 ```ts
@@ -408,14 +388,224 @@ console.log(checkSlices(myPizza));
 
 ## PE08
 
-```ts
+```js
+function primitiveMultiply(num1, num2) {
+  let chance = Math.random();
+  if (chance > 0.2) {
+    return num1 * num2;
+  }
 
+  throw new Error("MultiplicatorUnitFailiure");
+}
+
+function Calculate(number1, number2) {
+  let result = 0;
+  for (;;) {
+    try {
+      result = primitiveMultiply(number1, number2);
+      return result;
+    } catch (e) {
+      console.log("this try failed, attempting again");
+    }
+  }
+}
+
+console.log("hello from retry", Calculate(3, 6));s
+```
+
+```js
+const box = {
+  locked: true,
+  unlock() {
+    this.locked = false;
+  },
+  lock() {
+    this.locked = true;
+  },
+  _content: [],
+  get content() {
+    if (this.locked) throw new Error("Locked!");
+    return this._content;
+  },
+};
+
+function withBoxUnclocked(cb) {
+  try {
+    box.unlock();
+    cb();
+  } catch (error) {
+  } finally {
+    box.lock();
+  }
+}
+```
+```js
+// Upper and lower limit set
+var upperLimit = 21;
+var lowerLimit = 0;
+// Initialization of userInput var
+var userInput;
+// function to validate user input. It checks to see if the users input is in between two
+// pre-specified values
+function myFunction() {
+    while (true) {
+        try {
+            //getUserInput();
+            userInput = Number(prompt('Please input a number between 1 and 20'));
+            // call the validate user function to make sure the user input a valid number
+            if (userInput > lowerLimit && userInput < upperLimit) {
+                return userInput;
+            }
+            else {
+                alert("Number not within range, please try again.");
+                throw "Number not within range.";
+            }
+        }
+        catch (e) {
+            console.log(e);
+            continue;
+        }
+        finally {
+            console.log("The user input: " + userInput);
+        }
+    }
+}
 ```
 
 ## PE09
 
-```ts
+```js
+async function locateScalpel(nest){
+    current_name = nest.name;
+    for(let i=0; i<100; i++){
+        console.log("We are currently looking at: " + current_name);
+        
+    }   
+}
 
+async function locateScalpel2(nest){
+    console.log(nest);
+    return new Promise((resolve, reject) =>{
+        // trying to find the scalpel
+        let found  = false;
+        while(!found){
+            anyStorage(nest, nest.name, 'scalpel')
+                .then(next_nest_name =>{
+                    if(next_nest_name == nest.name){
+                        found = true;
+                        resolve("found it!");
+                    }
+                })
+                .catch(err => {
+                    reject("did not find it");
+                })
+        }
+    })
+}
+```
+
+```js
+let p1 = new Promise((resolve, reject) => {
+    let v = Math.random();
+    if(v >= .25){
+        resolve("Success")   
+    }else{
+        reject("Failed")
+    }
+})
+
+let p2 = new Promise((resolve, reject) => {
+    let v = Math.random();
+    if(v >= .25){
+        resolve("Success")   
+    }else{
+        reject("Failed")
+    }
+})
+
+let p3 = new Promise((resolve, reject) => {
+    let v = Math.random();
+    if(v >= .25){
+        resolve("Success")   
+    }else{
+        reject("Failed")
+    }
+})
+
+let arrayOfPromises = [p1, p2, p3];
+
+function promise_all(arrayOfPromises){
+    let returnValues = [];
+    for (let index = 0; index < arrayOfPromises.length; ++index) {
+        const element = arrayOfPromises[index];
+        elementValue = null;
+        element.then((message) =>{
+            returnValues.push(message);
+        }).catch(() =>{
+            return null;
+        })
+    }
+}
+
+promise_all(arrayOfPromises);
+```
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <form id="contact">
+      <label>name</label><br />
+      <input type="text" id="name" /><br />
+      <label>email</label><br />
+      <input type="email" id="email" /> <br />
+      <label>Superhero Alias</label><br />
+      <input type="text" id="superheroAlias" /><br />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script src="form.js">
+    </script>
+  </body>
+</html>
+```
+
+```js
+console.log("The page was loaded");
+const url =
+  "https://classdemo.amerabyte.net/Sample_Code/BIT_285-286-Summer2021/AJAX/process.php";
+const nameEL = document.getElementById("name");
+const emailEL = document.getElementById("email");
+const shaEL = document.getElementById("superheroAlias");
+const formEL = document.getElementById("form");
+
+async function onSubmit(event) {
+  event.preventDefault();
+  const formData = new FormData();
+  formData.append("name", name.value);
+  formData.append("email", email.value);
+  formData.append("superheroAlias", superheroAlias.vale);
+  const response = await fetch(url, {
+    method: "POST",
+    body: formData,
+  });
+  const jsonData = await response.json();
+  console.log(jsonData);
+  if (jsonData.success === false) {
+    alert(JSON.stringify(jsonData.errors.email));
+  } else if (jsonData.success === true) {
+    alert("success");
+  } else {
+    console.log("something else happend");
+  }
+}
+formEL.addEventListener("submit", onSubmit);
 ```
 
 ## PE10
