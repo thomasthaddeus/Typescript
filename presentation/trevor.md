@@ -127,6 +127,9 @@ p{
     
 
 ## PE03
+
+<details><Summary>PE03</summary>
+
 #### Task #1
 
 ```ts
@@ -190,9 +193,6 @@ console.log(a);
 ```
 
 #### Task #3
-
-<details><Summary>PE01</summary>
-
 ```ts
 // Declaring variables
 // The value of randomNumbers is initialized to an empty array
