@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        #products,#total,#shop{
+            display: none;
+        }
+    
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <section id="login">
+      <form id="loginForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" />
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <section id="products">
+        <h1 id="nameGoesHere"></h1>
+        <button id="navigateShop">Go to shop page</button>
+        <p> 
+            Food
+            <button class="addToCart" data-type="food">Add to cart</button>
+            <button class="removeFromCart" data-type="food">Remove from cart</button>
+            Price: <span id="foodPriceSpan"></span>
+            Quantity: 
+            <span id="foodQuantity">
+                0
+            </span>
+        </p>
+        <p> 
+            Car
+            <button class="addToCart" data-type="car">Add to cart</button>
+            <button class="removeFromCart" data-type="car">Remove from cart</button>
+            Price: <span id="carPriceSpan">0</span>
+            Quantity:
+            <span id="carQuantity">
+                0
+            </span>
+        </p>
+        
+    <h2 id="total">Total: </h2>
+    </section>
+   <section id="shop">
+    <h1>Shop</h1>
+    <label for="taxRate">Tax Rate</label>
+    <input type="number" id="taxRate" step="0.01"> <br>
+   
+    <label for="foodQuantity">Food Quantity</label>
+    <input type="number" id="foodStock" step="1"> <br>
+    <label for="foodPrice">Food Price</label>
+    <input type="number" id="foodPrice" step="0.01"> <br>
+   
+    <label for="carQuantity">Car Quantity</label>
+    <input type="number" id="carStock" step="1"> <br>
+    <label for="carPrice">car Price</label>
+    <input type="number" id="carPrice" step="0.01"> <br> 
+    
+    <button id="updateTaxRate">Update Values</button><br>
+
+    <button id="navigateProducts">Go to product page</button>
+   </section> 
+
+
+    <script src="index.js"></script>
+  </body>
+</html>
