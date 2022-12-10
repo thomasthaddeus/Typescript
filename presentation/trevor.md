@@ -191,6 +191,8 @@ console.log(a);
 
 #### Task #3
 
+<details><Summary>PE01</summary>
+
 ```ts
 // Declaring variables
 // The value of randomNumbers is initialized to an empty array
@@ -207,7 +209,11 @@ for (let i = 0; i < 10; i++) {
 console.log(randomNumbers);
 ```
 
+</details>
+
 ## PE04
+
+<details><Summary>PE04</summary>
 
 ```ts
 //let pizzaSlices:string[] = ["Cheese", "Peperoni", "Sausage", "BBQ", "Mac & Cheese", "Chicken Alfredo"];
@@ -269,7 +275,11 @@ for(let i = 0; i< transactions.length; i++){
 }
 ```
 
+</details>
+
 ## PE05
+
+<details><Summary>PE05</summary>
 
 ```ts
 // Upper and lower limit set
@@ -352,7 +362,11 @@ function whenTheButtonIsClicked(){
 </html>
 ```
 
+</details>
+
 ## PE06
+
+<details><Summary>PE06</summary>
 
 ```ts
 interface Pizza{
@@ -392,6 +406,8 @@ function checkSlices(pizza: Toppings): string{
 console.log(checkSlices(myPizza));
 ```
 
+</details>
+
 ## PE07
 
 ```ts
@@ -399,6 +415,9 @@ console.log(checkSlices(myPizza));
 ```
 
 ## PE08
+
+
+<details><Summary>PE08</summary>
 
 ```js
 function primitiveMultiply(num1, num2) {
@@ -484,7 +503,11 @@ function myFunction() {
 }
 ```
 
+</details>
+
 ## PE09
+
+<details><Summary>PE09</summary>
 
 ```js
 async function locateScalpel(nest){
@@ -620,7 +643,11 @@ async function onSubmit(event) {
 formEL.addEventListener("submit", onSubmit);
 ```
 
+</details>
+
 ## PE10
+
+<details><Summary>PE10</summary>
 
 ```ts
 const loginSectionEL = document.getElementById("login") as HTMLDivElement;
@@ -840,3 +867,5 @@ navigateShopButton.addEventListener("click", navigateShop)
   </body>
 </html>
 ```
+
+</details>
