@@ -2,6 +2,8 @@
 
 ## PE01
 
+<details><Summary>PE01</summary>
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +32,8 @@
     </body>
 </html>
 ```
+
+    
 ```css
 body{
     background-color: lightgrey;
@@ -46,7 +50,12 @@ p{
 .cityULink:visited{color: blue;}
 ```
 
+</details>
+    
+    
 ## PE02
+
+<details><Summary>PE02</summary>
 
 ```js
 // Gets litbulb photo info and sets the lighbulb to
@@ -113,6 +122,9 @@ p{
 .cityULink:visited{color: blue;}
 
 ```
+
+</details>
+    
 
 ## PE03
 #### Task #1
