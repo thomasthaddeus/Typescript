@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta author="" />
+</head>
+
+<body>
+<div class="container">
+    <img src="https://image.shutterstock.com/image-vector/on-off-icon-vector-eps-600w-1355996534.jpg" class="bulb" width="100" height="100"></img>
+    <button class="btn"> Switch on/off </button>
+</div>
+
+
+<script>
+const btn = document.querySelector('.btn');
+let bulb = document.querySelector('img');
+btn.addEventListener('click', () => {
+    if (bulb.src === 'https://image.shutterstock.com/image-vector/on-off-icon-vector-eps-600w-1355996534.jpg') {
+        bulb.src = 'https://image.shutterstock.com/image-vector/start-power-button-icon-vector-260nw-760464229.jpg';
+    } else {
+        bulb.src = 'https://image.shutterstock.com/image-vector/on-off-icon-vector-eps-600w-1355996534.jpg';
+    }
+});
+</script>
+
+
+
+<script type="text/javascript">
+    function onoff(){
+      currentvalue = document.getElementById('onoff').value;
+      if(currentvalue == "Off"){
+        document.getElementById("onoff").value="On";
+      }else{
+        document.getElementById("onoff").value="Off";
+      }
+    }
+    </script>
+
+    <input type="button" value="On" id="onoff" onclick="onoff();">
+</body>
+</html>

@@ -6,7 +6,7 @@
 
 ### Assignments to add
 
-- [ ] PE06
+- [x] PE06
 - [ ] PE07
 - [ ] PE10
 
@@ -19,10 +19,10 @@
 
 ## Trevor
 
-- [ ] PE07
-- [ ] PE08
-- [ ] PE09
-- [ ] PE10
+- [x] PE07
+- [x] PE08
+- [x] PE09
+- [x] PE10
 
 ---
 

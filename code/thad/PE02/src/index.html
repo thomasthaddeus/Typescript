@@ -1,94 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>My Starter Web page</title>
-        <meta name="author" content="Thaddeus Thomas" />
-        <img src="./IMG/background.jpg" content="background" />
-        <!-- Local style sheet relative to workspace folder -->
-        <link rel="stylesheet" href="./css/style.css" />
-        <style>
-            img {
-                width: 150%;
-            }
-        </style>
-        <!-- Local style sheet relative to this file -->
-        <link rel="stylesheet" href="./css/style.css" />
-    </head>
 
-    <body>
-        <div class="container">
-            <img src="https://avatars.githubusercontent.com/u/92204097?v=4" />
-            <h3>School & Career</h3>
-            <script
-                src="https://platform.linkedin.com/badges/js/profile.js"
-                async
-                defer
-                type="text/javascript"
-            ></script>
-            <div
-                class="badge-base LI-profile-badge"
-                data-locale="en_US"
-                data-size="medium"
-                data-theme="dark"
-                data-type="VERTICAL"
-                data-vanity="thaddeus-t-605492217"
-                data-version="v1"
-            >
-                <a
-                    class="badge-base__link LI-simple-link"
-                    href="https://www.linkedin.com/in/thaddeus-t-605492217?trk=profile-badge"
-                    >Thaddeus T</a
-                >
-            </div>
-            <a href="http://www.cityu.edu">
-                <p>"Hello City University of Seattle!"</p>
-            </a>
-        </div>
-        <div
-            class="container"
-            style="
-                padding-top: 8px;
-                text-align: left;
-                font-size: 15px;
-                font-family: Source Sans Pro, Arial, sans-serif;
-            "
-        >
-            <h2>3 Languages</h2>
-            <div>
-                <ol>
-                    <li>CSS</li>
-                    <img src="./IMG/css.jpg" style="float: bottom" /><br />
-                    <li>Javascript</li>
-                    <img src="./IMG/javascript.jpg" style="float: bottom" />
-                    <li>Html</li>
-                    <img src="./IMG/HTML_Logo.png" style="float: bottom" />
-                </ol>
-            </div>
-            <div>
-                <h3>Things to remember</h3>
-                <ul>
-                    <li><a href="http://blogger.com">Blogger</a></li>
-                    <li><a href="http://LinkedIn.com">LinkedIn</a></li>
-                    <li>Microsoft Power Platform</li>
-                </ul>
-            </div>
-        </div>
-        <div>
-            <h2>Light Switch</h2>
-            <img
-            id="light"
-            src="./IMG/PE02/lightOff.png"
-            style="width: 100px"
-            />
-            <script>
-                function toggleLightSwitch()
-                var imgLight = document.getElementById("light")
-                if (lightOff.match("OFF"))
-                imgLight.src()="./IMG/PE02/lightOff.png";
-                else
-                imgLight.src()="./IMG/PE02/lightOn.png";
-            </script>
-            <button type='button' id1="OFF" id2="ON" onclick="toggleLightSwitch();">ON/OFF</button>
-        </div>
-    </body>
+<head>
+  <title>My Starter Web page</title>
+  <meta name="author" content="Thaddeus Thomas" />
+  <!-- Local style sheet relative to workspace folder -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <div class="container2">
+    <img src="../img/lighton.png" class="bulb" width="auto" height="auto"></img>
+    <button class="btn">On/Off</button>
+  </div>
+  <script>
+    const btn = document.querySelector('.btn');
+    let bulb = document.querySelector('img');
+    btn.addEventListener('click', () => {
+      if (bulb.src === '../img/') {
+        bulb.src = '../img/lightoff.png';
+      } else {
+        bulb.src = '../img/lighton.png';
+      }
+    });
+  </script>
+<script type="text/javascript">
+  function onoff(){
+    currentvalue = document.getElementById('onoff').value;
+    if(currentvalue == "Off"){
+      document.getElementById("onoff").value="On";
+    }else{
+      document.getElementById("onoff").value="Off";
+    }
+  }
+  </script>
+
+  <input type="button" value="On" id="onoff" onclick="onoff()";>
+</div>
+</body>
+
 </html>

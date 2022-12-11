@@ -1,5 +1,20 @@
 # Assignments
 
+- [Assignments](#assignments)
+  - [PE01](#pe01)
+  - [PE02](#pe02)
+  - [PE03](#pe03)
+    - [Task #1](#task-1)
+    - [Task #2](#task-2)
+    - [Task #3](#task-3)
+  - [PE04](#pe04)
+  - [PE05](#pe05)
+  - [PE06](#pe06)
+  - [PE07](#pe07)
+  - [PE08](#pe08)
+  - [PE09](#pe09)
+  - [PE10](#pe10)
+
 ## PE01
 
 <details><Summary>PE01</summary>
@@ -7,6 +22,7 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< Updated upstream
     <head> 
         <title>Trevors' Webpage</title>
         <link rel="stylesheet" href="style.css">
@@ -30,6 +46,45 @@
         <button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
 
     </body>
+=======
+
+<head>
+    <title>Trevors' Webpage</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="author" content="Trevor Sparks" />
+    <style>
+        .button {
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Hello City University of Seattle!</p>
+    <a href="https://www.cityu.edu" class="cityULink" target="_blank">City University of Seattle homepage</a>
+    <h2>What Can JavaScript Do?</h2>
+    <p>JavaScript can change HTML attribute values.</p>
+    <p>
+        In this case JavaScript changes the value<br />
+        of the src (source) attribute of an image.
+    </p>
+    <img id="light" src="lightOn.png" style="width: auto" />
+    <img src="./lightOff.png" id="light" />
+    <button type="reset" id="ON" onclick="document.getElementById('MyLight').src='light'">
+        On/Off
+    </button>
+</body>
+
+>>>>>>> Stashed changes
 </html>
 ```
 
@@ -55,6 +110,7 @@ p{
     
 ## PE02
 
+<<<<<<< Updated upstream
 <details><Summary>PE02</summary>
 
 ```js
@@ -120,17 +176,69 @@ p{
 }
 .cityULink:link{color: black;}
 .cityULink:visited{color: blue;}
+=======
+    ```js
+    // Gets litbulb photo info and sets the lighbulb to
+    // the off lightbulb photo
+    var lightbulb = document.getElementById('lightbulb')
+    lightbulb.src = "pic_bulboff.gif"
 
-```
+    // Gets litbulb button info and sets the lighbulb to
+    // the off lightbulb button text to "off"
+    var lightswitch = document.getElementById('switch')
+    var stateOfLightswitch = document.getElementById('switch').innerText;
+    lightswitch.innerText = "Off"
 
+    // The function below turns on an off the lightbulb with an if statement.
+    lightswitch.onclick = function() {
+        if(lightswitch.innerText == "On") {
+            lightswitch.innerText = "Off"
+            lightbulb.src = "pic_bulboff.gif"
+        } else {
+            lightswitch.innerText = "On"
+            lightbulb.src = "pic_bulbon.gif"
+        }
+    }
+    ```
+>>>>>>> Stashed changes
+
+1. index.html
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>Trevors' Webpage</title>
+            <link rel="stylesheet" href="style.css">
+            <meta name="author" content="Trevor Sparks"/>
+        </head>
+        <body>
+            <h1>PE01</h1>
+            <p>Hello City University of Seattle!</p>
+            <a href="https://www.cityu.edu" class="cityULink" target="_blank">City Univeristy of Seattle homepage</a><br>
+
+            <h1>PE02</h1>
+            <img id="lightbulb"><br>
+            <button id="switch"></button><br>
+            <a href="https://www.w3schools.com/js/js_intro.asp" target="_blank">Lightbulb photos from W3 school</a><br>
+
+            <script src="main.js"></script>
+        </body>
+    </html>
+    ```
+
+<<<<<<< Updated upstream
 </details>
     
 
 ## PE03
 
 <details><Summary>PE03</summary>
+=======
+## PE03
+>>>>>>> Stashed changes
 
-#### Task #1
+### Task #1
 
 ```ts
 // Declaring Variables
@@ -175,7 +283,7 @@ if(ukCitizen){
 }
 ```
 
-#### Task #2
+### Task #2
 
 ```ts
 // Declaring variables
@@ -192,7 +300,12 @@ a = x+y;
 console.log(a);
 ```
 
+<<<<<<< Updated upstream
 #### Task #3
+=======
+### Task #3
+
+>>>>>>> Stashed changes
 ```ts
 // Declaring variables
 // The value of randomNumbers is initialized to an empty array
@@ -377,8 +490,8 @@ interface Pizza{
 
 interface Toppings extends Pizza{
     sauce: "Tomato" | "Alfredo" | "BBQ Sauce",
-    pineapple: boolean,
-    parmesan: boolean,
+    pineapple?: boolean,
+    parmesan?: boolean,
     crust?: string
 }
 

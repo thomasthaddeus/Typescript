@@ -1,3 +1,4 @@
+<!--
 4. Embed reviews within recipe structured data
 Since you already added Recipe structured data, the next step is to embed a review and aggregate ratings within the Recipe structured data (rather than other approaches, like a simple review or review with rating).
 
@@ -7,7 +8,7 @@ Add an individual review
 To add the first individual review from Julia Benson, follow the steps below:
 
 In index.html, add another entity with a "@type" of "Review".
-
+-->
 <html>
 <head>
 ...
@@ -23,7 +24,7 @@ In index.html, add another entity with a "@type" of "Review".
 </script>
 </head>
 </html>
-To add the first required review property, set the @type of the author to Person.
+<!--To add the first required review property, set the @type of the author to Person.-->
 
 <html>
 <head>
@@ -42,8 +43,8 @@ To add the first required review property, set the @type of the author to Person
 </script>
 </head>
 </html>
-Enter Julia Benson as the value for author.
-
+<!--Enter Julia Benson as the value for author.
+-->
 <html>
 <head>
 ...
@@ -62,9 +63,9 @@ Enter Julia Benson as the value for author.
 </script>
 </head>
 </html>
-Add the remaining required properties that are listed in the documentation.
-Add the recommended properties to drive better engagement in Search. You can use the name of the recipe site (The cake makery) as the value for publisher. Here's how a completed review should look:
-
+<!--Add the remaining required properties that are listed in the documentation.
+    Add the recommended properties to drive better engagement in Search. You can use the name of the recipe site (The cake makery) as the value for publisher. Here's how a completed review should look:
+-->
 <html>
 <head>
 ...
@@ -94,14 +95,13 @@ Add the recommended properties to drive better engagement in Search. You can use
 </script>
 </head>
 </html>
-In the Structured Data Testing Tool, enter the URL for your Glitch app and click Run Test. Ideally, you should see 0 errors and 1 warning for aggregateRating. If you see an error or more than one warning, read the message and fix the problem.
-Note: The most common issues are syntax problems and forgetting to add a required or recommended property. Clicking a parsed item or problem selects the appropriate section of your code.
-
-Add the aggregate rating for all reviews
-The aggregate rating for all reviews is the average rating based on multiple ratings or reviews for this recipe. To add the aggregate rating, follow the steps below:
-
-In index.html, add aggregateRating at the same level of indentation as "@type": "Recipe".
-
+<!--
+    In the Structured Data Testing Tool, enter the URL for your Glitch app and click Run Test. Ideally, you should see 0 errors and 1 warning for aggregateRating. If you see an error or more than one warning, read the message and fix the problem.
+    Note: The most common issues are syntax problems and forgetting to add a required or recommended property. Clicking a parsed item or problem selects the appropriate section of your code.
+    Add the aggregate rating for all reviews
+    The aggregate rating for all reviews is the average rating based on multiple ratings or reviews for this recipe. To add the aggregate rating, follow the steps below:
+    In index.html, add aggregateRating at the same level of indentation as "@type": "Recipe".
+-->
 <html>
 <head>
 ...
@@ -135,12 +135,12 @@ Set @type to AggregateRating.
 </script>
 </head>
 </html>
+<!--
 Add the required properties that are listed in the Aggregated rating properties section of the developer documentation.
 Note: We're not going to add itemReviewed since our example is embedded within recipe. We're not going to add bestRating and worstRating since our example is on a 5-point scale. By default, Google assumes that your site uses a 5-point scale, where 5 is the best possible rating and 1 is the worst, but you can use any other scale. If you do, you can mark up the best and worst ratings, and Google will scale that to the 5-star system.
-
 The first required property is ratingCount. Set the value for ratingCount to 18.
 Add the ratingValue. The ratingValue is the average rating for this recipe, which we're going to set as 4. Here's how a completed aggregate rating for recipes should look:
-
+-->
 <html>
 <head>
 ...
@@ -159,15 +159,14 @@ Add the ratingValue. The ratingValue is the average rating for this recipe, whic
 </script>
 </head>
 </html>
+<!--
 In the Rich Results Test, enter the URL for your Glitch app and click Test URL. Ideally, you should see 0 errors and 0 warnings. If you see an error or warning, read the message and fix the problem.
 Note: The most common issues are syntax problems and forgetting to add a required or recommended property. Clicking a parsed item or problem selects the appropriate section of your code.
-
 To preview how the page could look in search results, click Preview Results in the Rich Results Test. f4dd7a85875518d4.png
 9ffc97e46aad6cb7.png
-
 Final JSON-LD sample
 Here's how your completed JSON-LD recipe might look on an HTML page:
-
+-->
 
 <!doctype HTML>
 <html class="no-js">
