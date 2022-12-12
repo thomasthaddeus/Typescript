@@ -112,10 +112,10 @@ p{
 .cityULink:link{color: black;}
 .cityULink:visited{color: blue;}
 
- ```
+```
   
- ```js
- // Gets litbulb photo info and sets the lighbulb to
+```js
+// Gets litbulb photo info and sets the lighbulb to
 // the off lightbulb photo
 var lightbulb = document.getElementById('lightbulb')
 lightbulb.src = "pic_bulboff.gif"
@@ -137,7 +137,7 @@ lightswitch.onclick = function() {
       lightbulb.src = "pic_bulbon.gif"
    }
 }
- ```
+```
 
 </details>
     
@@ -145,63 +145,7 @@ lightswitch.onclick = function() {
 ## PE03
 
 <details><Summary>PE03</summary>
-=======
-## PE03
->>>>>>> Stashed changes
 
-=======
-    ```js
-    // Gets litbulb photo info and sets the lighbulb to
-    // the off lightbulb photo
-    var lightbulb = document.getElementById('lightbulb')
-    lightbulb.src = "pic_bulboff.gif"
-
-    // Gets litbulb button info and sets the lighbulb to
-    // the off lightbulb button text to "off"
-    var lightswitch = document.getElementById('switch')
-    var stateOfLightswitch = document.getElementById('switch').innerText;
-    lightswitch.innerText = "Off"
-
-    // The function below turns on an off the lightbulb with an if statement.
-    lightswitch.onclick = function() {
-        if(lightswitch.innerText == "On") {
-            lightswitch.innerText = "Off"
-            lightbulb.src = "pic_bulboff.gif"
-        } else {
-            lightswitch.innerText = "On"
-            lightbulb.src = "pic_bulbon.gif"
-        }
-    }
-    ```
-
-1. index.html
-
-    ```html
-    <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <title>Trevors' Webpage</title>
-            <link rel="stylesheet" href="style.css">
-            <meta name="author" content="Trevor Sparks"/>
-        </head>
-        <body>
-            <h1>PE01</h1>
-            <p>Hello City University of Seattle!</p>
-            <a href="https://www.cityu.edu" class="cityULink" target="_blank">City Univeristy of Seattle homepage</a><br>
-
-            <h1>PE02</h1>
-            <img id="lightbulb"><br>
-            <button id="switch"></button><br>
-            <a href="https://www.w3schools.com/js/js_intro.asp" target="_blank">Lightbulb photos from W3 school</a><br>
-
-            <script src="main.js"></script>
-        </body>
-    </html>
-    ```
-
-## PE03
-
->>>>>>> Stashed changes
 ### Task #1
 
 ```ts
@@ -264,15 +208,8 @@ a = x+y;
 console.log(a);
 ```
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-#### Task #3
-=======
-=======
->>>>>>> Stashed changes
 ### Task #3
 
->>>>>>> Stashed changes
 ```ts
 // Declaring variables
 // The value of randomNumbers is initialized to an empty array
