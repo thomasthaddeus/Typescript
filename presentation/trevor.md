@@ -18,6 +18,7 @@
 ## PE01
 
 <details><Summary>PE01</summary>
+  
 ```html
  <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +68,9 @@ p{
     
     
 ## PE02
+
 <details><Summary>PE03</summary>
+  
  ```html
  <!DOCTYPE html>
 <html lang="en">
