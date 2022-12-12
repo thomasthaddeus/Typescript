@@ -18,12 +18,9 @@
 ## PE01
 
 <details><Summary>PE01</summary>
-
 ```html
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     <head> 
         <title>Trevors' Webpage</title>
         <link rel="stylesheet" href="style.css">
@@ -47,54 +44,11 @@
         <button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
 
     </body>
-=======
-=======
->>>>>>> Stashed changes
-
-<head>
-    <title>Trevors' Webpage</title>
-    <link rel="stylesheet" href="style.css" />
-    <meta name="author" content="Trevor Sparks" />
-    <style>
-        .button {
-            border: none;
-            color: white;
-            padding: 16px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<<<<<<< Updated upstream
-
-<body>
-    <p>Hello City University of Seattle!</p>
-    <a href="https://www.cityu.edu" class="cityULink" target="_blank">City University of Seattle homepage</a>
-    <h2>What Can JavaScript Do?</h2>
-    <p>JavaScript can change HTML attribute values.</p>
-    <p>
-        In this case JavaScript changes the value<br />
-        of the src (source) attribute of an image.
-    </p>
-    <img id="light" src="lightOn.png" style="width: auto" />
-    <img src="./lightOff.png" id="light" />
-    <button type="reset" id="ON" onclick="document.getElementById('MyLight').src='light'">
-        On/Off
-    </button>
-</body>
-
->>>>>>> Stashed changes
 </html>
-```
-
-    
+ ```
+  
 ```css
-body{
+ body{
     background-color: lightgrey;
 }
 
@@ -107,39 +61,58 @@ p{
 }
 .cityULink:link{color: black;}
 .cityULink:visited{color: blue;}
-=======
 
-<body>
-    <p>Hello City University of Seattle!</p>
-    <a href="https://www.cityu.edu" class="cityULink" target="_blank">City University of Seattle homepage</a>
-    <h2>What Can JavaScript Do?</h2>
-    <p>JavaScript can change HTML attribute values.</p>
-    <p>
-        In this case JavaScript changes the value<br />
-        of the src (source) attribute of an image.
-    </p>
-    <img id="light" src="lightOn.png" style="width: auto" />
-    <img src="./lightOff.png" id="light" />
-    <button type="reset" id="ON" onclick="document.getElementById('MyLight').src='light'">
-        On/Off
-    </button>
-</body>
-
-</html>
->>>>>>> Stashed changes
-```
-
+ ```
 </details>
     
     
 ## PE02
+<details><Summary>PE03</summary>
+ ```html
+ <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Trevors' Webpage</title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="author" content="Trevor Sparks"/>
+    </head>
+    <body>
+        <h1>PE01</h1>
+        <p>Hello City University of Seattle!</p>
+        <a href="https://www.cityu.edu" class="cityULink" target="_blank">City Univeristy of Seattle homepage</a><br>
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<details><Summary>PE02</summary>
 
-```js
-// Gets litbulb photo info and sets the lighbulb to
+        <h1>PE02</h1>
+        <img id="lightbulb"><br>
+        <button id="switch"></button><br>
+        <a href="https://www.w3schools.com/js/js_intro.asp" target="_blank">Lightbulb photos from W3 school</a><br>
+
+
+
+        <script src="main.js"></script>
+    </body>
+</html>
+ ```
+  
+ ```css
+ body{
+    background-color: lightgrey;
+}
+
+p{
+  font-family: "monaco", monospace;
+}
+
+.cityULink{
+    font-family: "monaco", monospace;    
+}
+.cityULink:link{color: black;}
+.cityULink:visited{color: blue;}
+
+ ```
+  
+ ```js
+ // Gets litbulb photo info and sets the lighbulb to
 // the off lightbulb photo
 var lightbulb = document.getElementById('lightbulb')
 lightbulb.src = "pic_bulboff.gif"
@@ -161,98 +134,8 @@ lightswitch.onclick = function() {
       lightbulb.src = "pic_bulbon.gif"
    }
 }
-```
+ ```
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Trevors' Webpage</title>
-        <link rel="stylesheet" href="style.css">
-        <meta name="author" content="Trevor Sparks"/>
-    </head>
-    <body>
-        <h1>PE01</h1>
-        <p>Hello City University of Seattle!</p>
-        <a href="https://www.cityu.edu" class="cityULink" target="_blank">City Univeristy of Seattle homepage</a><br>
-
-        <h1>PE02</h1>
-        <img id="lightbulb"><br>
-        <button id="switch"></button><br>
-        <a href="https://www.w3schools.com/js/js_intro.asp" target="_blank">Lightbulb photos from W3 school</a><br>
-
-        <script src="main.js"></script>
-    </body>
-</html>
-```
-
-```css
-body{
-    background-color: lightgrey;
-    
-}
-
-p{
-  font-family: "monaco", monospace;
-}
-
-.cityULink{
-    font-family: "monaco", monospace;    
-}
-.cityULink:link{color: black;}
-.cityULink:visited{color: blue;}
-=======
-    ```js
-    // Gets litbulb photo info and sets the lighbulb to
-    // the off lightbulb photo
-    var lightbulb = document.getElementById('lightbulb')
-    lightbulb.src = "pic_bulboff.gif"
-
-    // Gets litbulb button info and sets the lighbulb to
-    // the off lightbulb button text to "off"
-    var lightswitch = document.getElementById('switch')
-    var stateOfLightswitch = document.getElementById('switch').innerText;
-    lightswitch.innerText = "Off"
-
-    // The function below turns on an off the lightbulb with an if statement.
-    lightswitch.onclick = function() {
-        if(lightswitch.innerText == "On") {
-            lightswitch.innerText = "Off"
-            lightbulb.src = "pic_bulboff.gif"
-        } else {
-            lightswitch.innerText = "On"
-            lightbulb.src = "pic_bulbon.gif"
-        }
-    }
-    ```
->>>>>>> Stashed changes
-
-1. index.html
-
-    ```html
-    <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <title>Trevors' Webpage</title>
-            <link rel="stylesheet" href="style.css">
-            <meta name="author" content="Trevor Sparks"/>
-        </head>
-        <body>
-            <h1>PE01</h1>
-            <p>Hello City University of Seattle!</p>
-            <a href="https://www.cityu.edu" class="cityULink" target="_blank">City Univeristy of Seattle homepage</a><br>
-
-            <h1>PE02</h1>
-            <img id="lightbulb"><br>
-            <button id="switch"></button><br>
-            <a href="https://www.w3schools.com/js/js_intro.asp" target="_blank">Lightbulb photos from W3 school</a><br>
-
-            <script src="main.js"></script>
-        </body>
-    </html>
-    ```
-
-<<<<<<< Updated upstream
 </details>
     
 
