@@ -7,15 +7,15 @@
 ### Assignments to add
 
 - [x] PE06
-- [ ] PE07
-- [ ] PE10
+- [x] PE07
+- [x] PE10
 
 ## Christian
 
-- [ ] PE04
-- [ ] PE08
-- [ ] PE09
-- [ ] PE10
+- [x] PE04
+- [x] PE08
+- [x] PE09
+- [x] PE10
 
 ## Trevor
 
@@ -26,4 +26,4 @@
 
 ---
 
-![[Presentation in shared documents folders](https://cityuseattle-my.sharepoint.com/:p:/g/personal/thomasthaddeus_cityuniversity_edu/EZRoDj9bOTNJujwJvE7A1jMBb5PrXjHfQBhzs3jerOAH6A)](https://img.shields.io/badge/github/last-commit/:user/:repo/:branch)
+<!--![[Presentation in shared documents folders](https://cityuseattle-my.sharepoint.com/:p:/g/personal/thomasthaddeus_cityuniversity_edu/EZRoDj9bOTNJujwJvE7A1jMBb5PrXjHfQBhzs3jerOAH6A)](https://img.shields.io/badge/github/last-commit/:user/:repo/:branch)-->
